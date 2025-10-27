@@ -8,7 +8,7 @@
 #include "Database.hpp"
 #include "Music.hpp"
 
-//Função auxiliar para data
+//Função auxiliar para formatar a data
 std::string getFormattedCurrentDate() {
     auto nowTime = std::chrono::system_clock::now();
     std::time_t currentTime = std::chrono::system_clock::to_time_t(nowTime);
@@ -24,7 +24,7 @@ std::string getFormattedCurrentDate() {
     return std::string(buffer);
 }
 
-//Função auxiliar para limpar a tela 
+//Função auxiliar para limpar a tela de execução do programa 
 void clearScreen() {
    #if defined(_WIN32) || defined(_WIN64)
     system("cls");
