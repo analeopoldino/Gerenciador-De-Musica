@@ -46,7 +46,6 @@ void pauseToContinues() {
 }
 
 // Menu para cadastrar nova musica
-// Menu para cadastrar nova musica
 void menuRegisterMusic(Database& db) {
     Music newMusic;
     
@@ -62,9 +61,8 @@ void menuRegisterMusic(Database& db) {
     std::cout << "Digite o album (opcional): ";
     std::getline(std::cin, newMusic.album);
 
-    // --- CORREÇÃO DO BUG AQUI ---
     std::cout << "Digite o genero (opcional): ";
-    std::getline(std::cin, newMusic.genre); // <-- Estava 'newMusic.album'
+    std::getline(std::cin, newMusic.genre); 
 
     std::cout << "Digite o ano de lancamento (opcional, 0 se nao souber): ";
     while (!(std::cin >> newMusic.release_year)) {
