@@ -1,25 +1,24 @@
-````markdown
-# Case Técnico DTI Rubix: Gerenciador de Músicas
+# Gerenciador de Músicas
 
-Este projeto é uma aplicação de console desenvolvida em C++ como parte do processo seletivo de estágio (Rubix) da DTI. A aplicação implementa as funcionalidades básicas de CRUD (Create, Read, Update, Delete) para gerenciar uma coleção de músicas, utilizando SQLite como banco de dados.
+Este projeto é uma aplicação de console desenvolvida em C++. A aplicação implementa as funcionalidades básicas de CRUD (Create, Read, Update, Delete) para gerenciar uma coleção de músicas, utilizando SQLite como banco de dados.
 
 ## 1. Visão Geral do Projeto
 
-* **Linguagem Escolhida:** C++ (Padrão C++17). A linguagem foi escolhida por ser uma tecnologia robusta e orientada a objetos ao qual eu ja fui introduzida anteriormente.
+* **Linguagem Escolhida:** C++ (Padrão C++17). Esta linguagem foi selecionada por sua robustez, capacidade de programação orientada a objetos e familiaridade prévia, permitindo um desenvolvimento eficiente e organizado.
 * **Banco de Dados:** SQLite.
 * **Recurso Escolhido:** Música.
 
 ### 1.1. Propriedades do Recurso (Música)
 
-O recurso "Música" é gerenciado por uma única tabela no banco de dados (o usuário usou `music` no singular no `Database.cpp`). As propriedades definidas cumprem os requisitos de incluir campos obrigatórios, opcionais e tipos de dados variados (texto, numérico e data).
+O recurso "Música" é gerenciado por uma única tabela no banco de dados. As propriedades definidas possuem campos obrigatórios, opcionais e tipos de dados variados (texto, numérico e data).
 
 | Campo | Tipo de Dado (SQL) | Obrigatório? | Descrição |
 | :--- | :--- | :--- | :--- |
 | `id` | INTEGER | Sim (Automático) | Identificador único (Chave Primária). |
 | `title` | TEXT | Sim | Título da música (Campo de texto). |
-| `artist` | TEXT | Não | Nome do artista ou banda. |
-| `album` | TEXT | Não | Álbum ao qual a música pertence. |
-| `genre` | TEXT | Não | Gênero da música. |
+| `artist` | TEXT | Não | Nome do artista ou banda (Campo de texto). |
+| `album` | TEXT | Não | Álbum ao qual a música pertence (Campo de texto). |
+| `genre` | TEXT | Não | Gênero da música (Campo de texto). |
 | `release_year` | INTEGER | Não | Ano de lançamento (Campo numérico). |
 | `registration_date` | DATE | Sim | Data em que o registro foi criado (Campo de data). |
 
@@ -41,11 +40,13 @@ Siga estes passos para compilar e iniciar a aplicação:
 
 **1. Clonar o Repositório:**
 ```bash
-git clone [https://github.com/analeopoldino/api-musica.git](https://github.com/analeopoldino/api-musica.git)
+git clone: https://github.com/analeopoldino/api-musica.git
+````
+**2. Acessar a pasta do projeto:**
+```bash
 cd api-musica
 ````
-
-**2. Compilar o Projeto:**
+**3. Compilar o Projeto:**
 O projeto utiliza um `Makefile` para gerenciar a compilação.
 
 ```bash
@@ -54,7 +55,7 @@ make all
 
 Isso criará um executável chamado `music_manager` na raiz do projeto.
 
-**3. Executar a Aplicação:**
+**4. Executar a Aplicação:**
 
 ```bash
 ./music_manager
@@ -68,7 +69,7 @@ A aplicação funciona através de um menu interativo.
 
   * **1. Cadastrar Música:**
 
-      * Solicita ao usuário o título (obrigatório), artista, álbum, gênero e ano.
+      * Solicita ao usuário o título (obrigatório), artista, álbum, gênero e ano de lançamento.
       * Realiza validações (ex: título não pode ser vazio).
 
   * **2. Listar Músicas:**
@@ -95,7 +96,7 @@ A aplicação funciona através de um menu interativo.
 
 ## 5\. Diferenciais Implementados
 
-Além dos requisitos obrigatórios, os seguintes diferenciais opcionais foram implementados:
+Além das implementações citadas, os seguintes diferenciais foram implementados:
 
 ### 5.1. Testes Unitários
 
@@ -115,7 +116,7 @@ Foi criado um `Dockerfile` que permite construir e executar a aplicação em um 
 
 ```bash
 # 1. Construir a imagem
-docker build -t music-manager .
+docker build -t music-manager
 
 # 2. Executar o contêiner
 docker run -it music-manager
